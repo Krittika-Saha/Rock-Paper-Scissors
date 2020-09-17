@@ -1,11 +1,34 @@
-wish = input()
+6# Write your code here
 
-def lets_cheat(option):
-    if option == 'paper':
-        print("Sorry, but the computer chose scissors")
-    elif option == 'rock':
-        print("Sorry, but the computer chose paper")
-    elif option == 'scissors':
-        print("Sorry, but the computer chose rock")
-    
-lets_cheat(wish)
+import random
+
+
+computer_choice = random.choice(['rock','paper','scissors'])
+
+
+win = {
+    'rock':'scissors',
+    'scissors':'paper',
+    'paper':'rock'
+    }
+
+def play(user, comp_choice):
+
+    if user == comp_choice:
+
+        print(f"There is a draw ({comp_choice})")
+    elif win[user] == comp_choice:
+        pass
+    elif win[user] == comp_choice:
+
+        print(f'Sorry, but the computer chose {comp_choice}')
+
+while True:
+    wish = input("")
+    play('rock', computer_choice)
+    if wish == 'rock' or wish == 'paper' or wish == 'scissors':
+        play(wish, computer_choice)
+    elif wish == '!exit':
+        print("Bye!")
+        break
+
