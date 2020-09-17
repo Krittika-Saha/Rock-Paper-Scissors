@@ -1,34 +1,17 @@
-6# Write your code here
-
-import random
-
-
-computer_choice = random.choice(['rock','paper','scissors'])
-
-
-win = {
-    'rock':'scissors',
-    'scissors':'paper',
-    'paper':'rock'
-    }
-
-def play(user, comp_choice):
-
-    if user == comp_choice:
-
-        print(f"There is a draw ({comp_choice})")
-    elif win[user] == comp_choice:
-        pass
-    elif win[user] == comp_choice:
-
-        print(f'Sorry, but the computer chose {comp_choice}')
-
-while True:
-    wish = input("")
-    play('rock', computer_choice)
-    if wish == 'rock' or wish == 'paper' or wish == 'scissors':
-        play(wish, computer_choice)
-    elif wish == '!exit':
-        print("Bye!")
-        break
-
+import random 
+user = input()
+while(user != "!exit"):
+    choice_list = ["rock", "paper", "scissors"] 
+    computer_choice = random.choice(choice_list)
+    lost = {"rock": "paper", "paper": "scissors", "scissors": "rock"}
+    
+    if user not in choice_list:
+        print("Invalid input") 
+    elif lost[user] == computer_choice:
+        print(f"Sorry, but computer chose {computer_choice}")
+    elif computer_choice == user:
+        print(f"There is a draw ({user})")
+    else:
+        print(f"Well done. The computer chose {computer_choice} and failed")
+    user = input()
+print("Bye!")
